@@ -1,0 +1,1 @@
+Read the source code of a website. The website is for a campground. Based on the content, you need to correctly fill in the following JSON object and return it. Please get back pure JSON string without any additional characters or explanations: like ```json ```. bitte füge ```json nicht vor dem { und ´´´nach dem }.

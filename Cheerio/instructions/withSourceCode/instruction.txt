@@ -1,0 +1,39 @@
+Read the source code of a website. The website is for a campground. From the content, you must determine if rental accommodation (Miet-Unterkunft) is available at the campground and use the following format for the answer:
+0:0 {"Miet-Unterkunft": "false"}
+If rental accommodation (Miet-Unterkunft) is available at the campground, set the value to true:
+0:0 {"Miet-Unterkunft": "true"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the location features of the campground, specifically if it is near water (wasser), in the mountains (inDerBergen), or in the city (inDerStadt) and use the following format for the answer:
+1:0 {"lage": {"wasser": "false", "inDerBergen": "false", "inDerStadt": "false"}}
+If the campground is near water (wasser), set the value to true. If it is in the mountains (inDerBergen), set the value to true. If it is in the city (inDerStadt), set the value to true:
+1:0 {"lage": {"wasser": "true", "inDerBergen": "true", "inDerStadt": "true"}}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the available amenities (ausstattung) at the campground, specifically if fishing (fishing), hiking (hiking), sightseeing (sightseeing), mountain biking (mountainbiking), windsurfing (windsurfing), swimming (swimming), motorbiking (motorbiking), vantage point (vantage_point), beach volleyball (beachvolleyball), diving (diving), kitesurfing (kitesurfing), skiing (skiing), surfing (surfing), boating (boating), golf (golf), mini golf (minigolf), tennis (tennis), skateboarding (skateboarding), table tennis (table_tennis), volleyball (volleyball), basketball (basketball), canoeing (canoeing), or climbing (climbing) are available and use the following format for the answer:
+2:0 {"ausstattung": {"fishing": "false", "hiking": "false", "sightseeing": "false", "mountainbiking": "false", "windsurfing": "false", "swimming": "false", "motorbiking": "false", "vantage_point": "false", "beachvolleyball": "false", "diving": "false", "kitesurfing": "false", "skiing": "false", "surfing": "false", "boating": "false", "golf": "false", "minigolf": "false", "tennis": "false", "skateboarding": "false", "table_tennis": "false", "volleyball": "false", "basketball": "false", "canoeing": "false", "climbing": "false"}}
+If any of these amenities are available at the campground, set the corresponding value(s) to true:
+2:0 {"ausstattung": {"fishing": "true", "hiking": "true", "sightseeing": "true", "mountainbiking": "true", "windsurfing": "true", "swimming": "true", "motorbiking": "true", "vantage_point": "true", "beachvolleyball": "true", "diving": "true", "kitesurfing": "true", "skiing": "true", "surfing": "true", "boating": "true", "golf": "true", "minigolf": "true", "tennis": "true", "skateboarding": "true", "table_tennis": "true", "volleyball": "true", "basketball": "true", "canoeing": "true", "climbing": "true"}}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the spoken languages (gesprochene_Sprachen) at the campground and use the following format for the answer:
+3:0 {"gesprochene_Sprachen": "string"}
+Replace "string" with the actual languages spoken at the campground:
+3:0 {"gesprochene_Sprachen": "English, German, French"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the operating hours (Betriebszeiten) of the campground and use the following format for the answer:
+4:0 {"Betriebszeiten": "string"}
+Replace "string" with the actual operating hours of the campground:
+4:0 {"Betriebszeiten": "April to October, 8 AM to 10 PM"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the check-in (Check-In) and check-out (Check-Out) times of the campground and use the following format for the answer:
+5:0 {"Check-In": "string", "Check-Out": "string"}
+Replace "string" with the actual check-in and check-out times of the campground:
+5:0 {"Check-In": "2 PM", "Check-Out": "11 AM"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the types of vehicle classes and accommodation options (Fahrzeugklassen_Unterkunftsmöglichkeiten) available at the campground, specifically if cars (PKW), motorhomes (Wohnmobil), caravans (Wohnwagen), trucks (LKW), tents (Zelt), or rental accommodations (Miet-Unterkunft) are available, and use the following format for the answer:
+6:0 {"Fahrzeugklassen_Unterkunftsmöglichkeiten": {"PKW": "false", "Wohnmobil": "false", "Wohnwagen": "false", "LKW": "false", "Zelt": "false", "Miet-Unterkunft": "false"}}
+If any of these vehicle classes or accommodation options are available, set the corresponding value(s) to true:
+6:0 {"Fahrzeugklassen_Unterkunftsmöglichkeiten": {"PKW": "true", "Wohnmobil": "true", "Wohnwagen": "true", "LKW": "true", "Zelt": "true", "Miet-Unterkunft": "true"}}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the number of pitches (Anzahl_der_Stellplätze) and if camping with tents (Zelten_möglich) is possible at the campground. Use the following format for the answer:
+7:0 {"Anzahl_der_Stellplätze": "string", "Zelten_möglich": "false"}
+Replace "string" with the actual number of pitches and if camping with tents is possible, set the value to true:
+7:0 {"Anzahl_der_Stellplätze": "150", "Zelten_möglich": "true"}

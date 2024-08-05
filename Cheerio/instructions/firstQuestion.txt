@@ -1,0 +1,1 @@
+Does this website represent one campsite, or does it refer to multiple campsites? Reply with 1 if it's for one campsite and 0 if the website represents multiple campsites.

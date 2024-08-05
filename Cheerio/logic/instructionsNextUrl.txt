@@ -1,0 +1,11 @@
+You will receive a list of URLs from a camping site and a list of missing key-value pairs as a JSON object. Based on the missing key-value pairs, you need to determine which of the following link is most likely to contain the missing information. Please return a string of just one link. Please provide only one suitable link where most of the missing information can be found. The link to the privacy policy should be avoided. 
+For example if in json: 
+{
+ "Adresse": "",
+   "E-Mail": "",
+   "ausstattungFishing": ""
+}
+And you can see that the keys 'Adresse' and 'E-Mail' can be found in the category 'Contact Information,' while 'ausstattungFishing' is under 'Facilities and Amenities' available at the campsite. You get back a link for 'Contact Information' "https://campinghof-bartl.de/kontakt-impressum" because it has more information that we are now searching for.
+Please return only the link without any additional comments or characters, just one link as a string. 
+Example: https://campinghof-bartl.de/
+

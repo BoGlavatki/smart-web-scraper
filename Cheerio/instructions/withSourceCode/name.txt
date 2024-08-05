@@ -1,0 +1,69 @@
+You will receive multiple instructions that you must process step by step. Your response must follow the same order as the instructions.
+
+Please analyze this source code and find the name of the campsite. If you find the name, please send it back in the following format:
+0:0{"name": "string"}
+where 'string' must be replaced with the name of the campsite.
+If you do not find this information in the source code, provide the links where the name might be found in the following format:
+0:1{'link1', 'link2', 'link3',...'linkn'}
+
+Read the source code of a website. The website is for a campground. From the content, you must understand whether it is a campground, an RV park, or both. Based on that, give an answer in the following format:
+1:0 {"Kategorie-Campingplatz":{
+      "is":boolean,
+      "pricePerNight":"string"
+    }}
+    {"Kategorie-Wohnmobilstellplatz":{
+      "is":boolean,
+      "pricePerNight":"string"
+    }}
+If you cannot find price, analyze the source code and send the links under which the information is most likely to be found for price on the website. in the following format:
+1:1{'Put the URL here'}
+
+Read the source code of a website. The website is for a campground. From the content, you must find the phone number of this campground and use the following format for the answer:
+2:0 {"telefonNummer": "string"}
+If you cannot find this information, analyze the source code and send the links under which the information is most likely to be found on the website.
+2:1{'link1', 'link2', 'link3',...'linkn'}
+
+Read the source code of a website. The website is for a campground. From the content, you must find the description text of this campground and use the following format for the answer:
+3:0 {"Beschreibungstext": "string"}
+If you cannot find this information, analyze the source code and send the links under which the information is most likely to be found on the website.
+3:1{'link1', 'link2', 'link3',...'linkn'}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine if rental accommodation (Miet-Unterkunft) is available at the campground and use the following format for the answer:
+4:0 {"Miet-Unterkunft": "boolean"}
+If rental accommodation (Miet-Unterkunft) is available at the campground, set the value to true:
+4:1 {"Miet-Unterkunft": "true"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the location features of the campground, specifically if it is near water (wasser), in the mountains (inDerBergen), or in the city (inDerStadt) and use the following format for the answer:
+5:0 {"lage": {"wasser": "boolean", "inDerBergen": "boolean", "inDerStadt": "boolean"}}
+If the campground is near water (wasser), set the value to true. If it is in the mountains (inDerBergen), set the value to true. If it is in the city (inDerStadt), set the value to true:
+5:1 {"lage": {"wasser": "true", "inDerBergen": "true", "inDerStadt": "true"}}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the available amenities (ausstattung) at the campground, specifically if fishing (fishing), hiking (hiking), sightseeing (sightseeing), mountain biking (mountainbiking), windsurfing (windsurfing), swimming (swimming), motorbiking (motorbiking), vantage point (vantage_point), beach volleyball (beachvolleyball), diving (diving), kitesurfing (kitesurfing), skiing (skiing), surfing (surfing), boating (boating), golf (golf), mini golf (minigolf), tennis (tennis), skateboarding (skateboarding), table tennis (table_tennis), volleyball (volleyball), basketball (basketball), canoeing (canoeing), or climbing (climbing) are available and use the following format for the answer:
+6:0 {"ausstattung": {"fishing": "boolean", "hiking": "boolean", "sightseeing": "boolean", "mountainbiking": "boolean", "windsurfing": "boolean", "swimming": "boolean", "motorbiking": "boolean", "vantage_point": "boolean", "beachvolleyball": "boolean", "diving": "boolean", "kitesurfing": "boolean", "skiing": "boolean", "surfing": "boolean", "boating": "boolean", "golf": "boolean", "minigolf": "boolean", "tennis": "boolean", "skateboarding": "boolean", "table_tennis": "boolean", "volleyball": "boolean", "basketball": "boolean", "canoeing": "boolean", "climbing": "boolean"}}
+If any of these amenities are available at the campground, set the corresponding value(s) to true:
+6:1 {"ausstattung": {"fishing": "true", "hiking": "true", "sightseeing": "true", "mountainbiking": "true", "windsurfing": "true", "swimming": "true", "motorbiking": "true", "vantage_point": "true", "beachvolleyball": "true", "diving": "true", "kitesurfing": "true", "skiing": "true", "surfing": "true", "boating": "true", "golf": "true", "minigolf": "true", "tennis": "true", "skateboarding": "true", "table_tennis": "true", "volleyball": "true", "basketball": "true", "canoeing": "true", "climbing": "true"}}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the spoken languages (gesprochene_Sprachen) at the campground and use the following format for the answer:
+7:0 {"gesprochene_Sprachen": "string"}
+Replace "string" with the actual languages spoken at the campground:
+7:1 {"gesprochene_Sprachen": "English, German, French"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the operating hours (Betriebszeiten) of the campground and use the following format for the answer:
+8:0 {"Betriebszeiten": "string"}
+Replace "string" with the actual operating hours of the campground:
+Example; {"Betriebszeiten": "April to October, 8 AM to 10 PM"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the check-in (Check-In) and check-out (Check-Out) times of the campground and use the following format for the answer:
+9:0 {"Check-In": "string", "Check-Out": "string"}
+Replace "string" with the actual check-in and check-out times of the campground:
+Example: {"Check-In": "2 PM", "Check-Out": "11 AM"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine if rental accommodations (Miet-Unterkunft) are available at the campground and use the following format for the answer:
+10:0 {"Miet-Unterkunft": "boolean"}
+If rental accommodations (Miet-Unterkunft) are available at the campground, set the value to true:
+Example: {"Miet-Unterkunft": "true"}
+
+Read the source code of a website. The website is for a campground. From the content, you must determine the number of pitches (Anzahl_der_Stellplätze) and if camping with tents (Zelten_möglich) is possible at the campground. Use the following format for the answer:
+11:0 {"Anzahl_der_Stellplätze": "string", "Zelten_möglich": "boolean"}
+Replace "string" with the actual number of pitches and if camping with tents is possible, set the value to true:
+example:  {"Anzahl_der_Stellplätze": "150", "Zelten_möglich": "true"}
