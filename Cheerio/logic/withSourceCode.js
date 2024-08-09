@@ -1,8 +1,9 @@
 import OpenAI from "openai";
 import fs from 'fs';
 
-export async function analysing(html, instructions, instructionsSystem) {
 
+export async function analysing(html, instructions, instructionsSystem) {
+  const apiKeyFromFile = fs.readFileSync('./apiKey.txt');
 
 console.log("Der Code wird analisiert....")
   let i = 0;
@@ -15,7 +16,7 @@ console.log("Der Code wird analisiert....")
 
   async function requestOpenAI(html, instructions, instructionsSystem) {
     const openai = new OpenAI({
-      apiKey: 'sk-None-C2D5AiI8F2XD32eACscWT3BlbkFJeOODjCEzM7ZjSfYokrRI'
+      apiKey: apiKeyFromFile
     });
 
     const response = await openai.chat.completions.create({

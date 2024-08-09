@@ -1,12 +1,13 @@
 import { OpenAI } from 'openai'
+import fs from 'fs';
 import * as fs from 'fs';
 
-
+const apiKeyFromFile = fs.readFileSync('../../logic/apiKey.txt');
 export async function analysing(imageBase64, instructions, instructionsSystem) {
 
 async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
     const openai = new OpenAI({
-        apiKey: 'sk-None-C2D5AiI8F2XD32eACscWT3BlbkFJeOODjCEzM7ZjSfYokrRI'
+        apiKey: apiKeyFromFile
       });
         const response = await openai.chat.completions.create({
             model: 'gpt-4o',

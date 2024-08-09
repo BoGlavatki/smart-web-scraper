@@ -1,7 +1,9 @@
 import OpenAI from "openai";
-import fs from 'fs'
+import fs from 'fs';
 
+const apiKeyFromFile = fs.readFileSync('./apiKey.txt');
 export async function analyseNextLinkWithLLM(urls, missingProperties){
+  
     const instructionsNextUrl = `You will receive a list of URLs from a camping site and a list of missing key-value pairs as a JSON object. Based on the missing key-value pairs, you need to determine which of the following link is most likely to contain the missing information. Please return a string of just one link. Please provide only one suitable link where most of the missing information can be found. The link to the privacy policy should be avoided. 
 For example if in json: 
 {
@@ -25,7 +27,7 @@ const urlsString = urls.join(', ');
 // console.log('Properties from REQUEST_OPEN_AI METHOD.....' + missingPropertiesString);
 console.log('Urls from REQUEST_OPEN_AI METHOD.....' + urlsString);
     const openai = new OpenAI({
-      apiKey: 'sk-None-C2D5AiI8F2XD32eACscWT3BlbkFJeOODjCEzM7ZjSfYokrRI'
+      apiKey: apiKeyFromFile
     });
 
     const response = await openai.chat.completions.create({
