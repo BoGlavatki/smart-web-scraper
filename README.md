@@ -20,7 +20,7 @@ Das ist ein **smarter Web-Scraper**, der das Ziel hat, bestimmte Informationen v
 7. Im Verzeichnis node_modules liegen alle benötigten Bibliotheken, die für das gesamte Projekt notwendig sind, wie z.B. axios, cheerio, usw.
 8. Im Verzeichnis my-crawler liegt der Screenshot-Crawler, also die Logik zur Analyse der Screenshots der Webseiten. Auch innerhalb dieses Verzeichnisses befindet sich die Datei zum Starten des Screenshot-Crawlers.
 9. Im Verzeichnis logic liegen die Skripte für separate Funktionen, wie z.B. Kommunikation mit LLM, Reinigung des Quellcodes usw.
-10. Im Verzeichnis llama3 liegt die Logik für die Kommunikation mit Llama3. Man startet die Kommunikation durch den Aufruf der Datei index.js. Natürlich muss Llama3 vorher installiert und gestartet werden. Hier ist ein separates Repository, das beschreibt, wie man das macht:
+10. Im Verzeichnis llama3 liegt die Logik für die Kommunikation mit Llama3. Man startet die Kommunikation durch den Aufruf der Datei index.js. Natürlich muss Llama3 vorher installiert und gestartet werden. Hier ist ein separates Repository, das beschreibt, wie man das macht: https://github.com/ggerganov/llama.cpp
 11. Im Verzeichnis instructions liegen Anweisungen an das LLM, die geändert, eingefügt oder gelöscht werden können. Man muss darauf achten, diese an der entsprechenden Stelle im Code auszulesen.
 12. Im Verzeichnis excel werden die Daten, die nach dem Scraping in der JSON-Datei gesammelt wurden, konvertiert. Es war notwendig, Tabellen aufzustellen, um die Anzahl der richtigen Antworten zu bewerten.
 13. Im Verzeichnis data liegen weitere Verzeichnisse mit den Namen der Webseiten, die gescrapt wurden.
