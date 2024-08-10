@@ -35,15 +35,13 @@ Das ist ein **smarter Web-Scraper**, der das Ziel hat, bestimmte Informationen v
 4. Dann geht man in das Verzeichnis cheerio, dort wo sich index-refactor.js befindet, und führt den Befehl ```bahs node index-refactor.js ``` aus. Das startet den Analyseprozess.
 5. Der Prozess wird gestartet und im Verzeichnis data werden weitere Verzeichnisse erstellt, die den Namen der besuchten Webseiten tragen. Innerhalb dieser Verzeichnisse werden JSON-Dateien erstellt, in denen die gesuchten Informationen gespeichert werden.
 
+## Starten des Crawlers mit Screenshotanalyse
 
- 6. 
+1. Um den ScreenshotCrawler zu starten, muss man in das Verzeichnis my-crawler -> src wechseln und dort die Datei node startCrawler.js ausführen.
+2. Hier findet man auch die Dateien excel, data, logicScreenshots und screenshots, die hauptsächlich die gleiche Funktionalität wie in der Quellcodeanalyse beinhalten.
+3. Im Verzeichnis screenshots befinden sich die Screenshots, und im Verzeichnis logicScreenshots die Dateien analysingScreenshot.js, convertImageToBase64.js und storePropertiesForDomain.js. Die Datei analysingScreenshot.js liest die Datei apiKey.txt aus und verwendet den API-Schlüssel, um mit ChatGPT zu kommunizieren.
+4. Das Verzeichnis data sammelt die Ergebnisse der Analyse.
 
-Starten des Crawlers mit Screenshotanalyse
 
-Um den ScreenshotCrawler zu starten, muss man in das Verzeichnis my-crawler -> src wechseln und dort die Datei
-node startCrawler.js
-ausführen.
 
-Hier findet man auch die Dateien excel, data, logicScreenshots und screenshots, die hauptsächlich die gleiche Funktionalität wie in der Quellcodeanalyse beinhalten.
-Im Verzeichnis screenshots befinden sich die Screenshots, und im Verzeichnis logicScreenshots die Dateien analysingScreenshot.js, convertImageToBase64.js und storePropertiesForDomain.js. Die Datei analysingScreenshot.js liest die Datei apiKey.txt aus und verwendet den API-Schlüssel, um mit ChatGPT zu kommunizieren.
-Das Verzeichnis data sammelt die Ergebnisse der Analyse.# smart-web-scraper
+
