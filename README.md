@@ -32,11 +32,11 @@ Das ist ein **smarter Web-Scraper**, der das Ziel hat, bestimmte Informationen v
 1. Um den Smart Crawler zu starten, muss man die Webseiten im Verzeichnis startURLs in der Datei urls.txt definieren. Es darf keine Leerzeile zwischen den URLs und nach den URLs existieren.
 2. Im Verzeichnis logic liegen die Dateien withSourceCode.js und analyseNextLinkWithLLM.js. Diese Dateien senden Anweisungen und Quellcode an das LLM, um sie zu analysieren. Um dies zu ermöglichen, lesen beide die Textdatei apiKey.txt aus, in der der API-Schlüssel von OpenAI liegt. Dies ist notwendig für die Kommunikation mit der API von OpenAI. Das bedeutet, dass man den Schlüssel von OpenAI in die Datei apiKey.txt eintragen muss.
 3. Danach kann man auch die JSON-Datei anpassen, falls man andere Informationen benötigt, und die Anweisungen ebenfalls, wenn nicht, dann kann man sie so lassen, wie sie sind.
-4. 
+4. Dann geht man in das Verzeichnis cheerio, dort wo sich index-refactor.js befindet, und führt den Befehl ```bahs node index-refactor.js ``` aus. Das startet den Analyseprozess.
+5. Der Prozess wird gestartet und im Verzeichnis data werden weitere Verzeichnisse erstellt, die den Namen der besuchten Webseiten tragen. Innerhalb dieser Verzeichnisse werden JSON-Dateien erstellt, in denen die gesuchten Informationen gespeichert werden.
 
-Dann geht man in das Verzeichnis cheerio, dort wo sich index-refactor.js befindet, und führt den Befehl
-node index-refactor.js 
-aus. Das startet den Analyseprozess. 5. Der Prozess wird gestartet und im Verzeichnis data werden weitere Verzeichnisse erstellt, die den Namen der besuchten Webseiten tragen. Innerhalb dieser Verzeichnisse werden JSON-Dateien erstellt, in denen die gesuchten Informationen gespeichert werden.
+
+ 6. 
 
 Starten des Crawlers mit Screenshotanalyse
 
