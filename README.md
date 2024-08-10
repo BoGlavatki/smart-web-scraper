@@ -1,8 +1,8 @@
-# Anleitung
+# Projektübersicht und Anleitung
 
 Das ist ein **smarter Web-Scraper**, der das Ziel hat, bestimmte Informationen von Webseiten mit Hilfe von **LLM** und speziell ***ChatGPT*** zu extrahieren.
 
-# Hier wird das Projekt mit den dazugehörigen Verzeichnissen beschrieben sowie die jeweiligen Dateien und deren Funktionen erklärt.
+## Hier wird das Projekt mit den dazugehörigen Verzeichnissen beschrieben sowie die jeweiligen Dateien und deren Funktionen erklärt.
 
 1. Man muss Node.js vorinstalliert haben um der Scrapper starten zu können.
 2. Klonen Sie das Repository in das Verzeichnis und Gehen Sie in das Cheerio-Verzeichnis.
