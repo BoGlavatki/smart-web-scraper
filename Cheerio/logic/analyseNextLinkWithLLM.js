@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import fs from 'fs';
 
-const apiKeyFromFile = fs.readFileSync('./apiKey.txt');
+const apiKeyFromFile = fs.readFileSync('/Users/boleslavglavatki/Desktop/Studium/Bachelor/Bachelorarbeit/projekt/gitSmartWebScrapper/smart-web-scraper/Cheerio/logic/apiKey.txt');
 export async function analyseNextLinkWithLLM(urls, missingProperties){
   
     const instructionsNextUrl = `You will receive a list of URLs from a camping site and a list of missing key-value pairs as a JSON object. Based on the missing key-value pairs, you need to determine which of the following link is most likely to contain the missing information. Please return a string of just one link. Please provide only one suitable link where most of the missing information can be found. The link to the privacy policy should be avoided. 

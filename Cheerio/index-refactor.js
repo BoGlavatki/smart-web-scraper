@@ -32,6 +32,7 @@ for (const domain of startDomains) {
         console.log("Visited Urls Count: " + visitedUrls.length);
 
         const cleanHtml = await  getCleanSource(url);
+        console.log(cleanHtml);
 
         // on first run: create a list of all links on this page
         if(visitedUrls.length === 1) {

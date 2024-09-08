@@ -3,7 +3,7 @@ import fs from 'fs';
 
 
 export async function analysing(html, instructions, instructionsSystem) {
-  const apiKeyFromFile = fs.readFileSync('./apiKey.txt');
+  const apiKeyFromFile = fs.readFileSync('/Users/boleslavglavatki/Desktop/Studium/Bachelor/Bachelorarbeit/projekt/gitSmartWebScrapper/smart-web-scraper/Cheerio/logic/apiKey.txt');
 
 console.log("Der Code wird analisiert....")
   let i = 0;

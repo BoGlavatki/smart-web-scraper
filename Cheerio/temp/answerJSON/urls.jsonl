@@ -1,0 +1,60 @@
+{
+   "name": "campinghof-bartl",
+   "Kategorie-Campingplatz": true,
+   "Kategorie-Wohnmobilstellplatz": "",
+   "Adresse": "",
+   "telefonNummer": "0171-174 98 58",
+   "E-Mail": "",
+   "urlsBidler": "https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=218%2C300&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=745%2C1024&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=768%2C1056&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=1117%2C1536&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=1489%2C2048&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?resize=1200%2C1650&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?w=1861&ssl=1, https://i0.wp.com/campinghof-bartl.de/wp-content/uploads/2024/05/Bild-5-scaled.jpg?w=1680&ssl=1",
+   "Beschreibungstext": "Camping und Ferienwohnung im Leipziger Neuseenland. Nutzen Sie unser erweitertes Angebot mit Waschmaschine, Fahrradverleih und Grillmöglichkeiten. Genießen Sie einen angenehmen Aufenthalt nahe der Seenlandschaft Leipzig.",
+   "lageWasser": true,
+   "lageInDerBergen": false,
+   "lageInDerStadt": false,
+   "ausstattungFishing": "",
+   "ausstattungHiking": "",
+   "ausstattungSightseeing": true,
+   "ausstattungMountainbiking": "",
+   "ausstattungWindsurfing": "",
+   "ausstattungSwimming": "",
+   "motorbiking": "",
+   "vantage_point": "",
+   "beachvolleyball": "",
+   "diving": "",
+   "kitesurfing": "",
+   "skiing": "",
+   "surfing": "",
+   "boating": "",
+   "golf": "",
+   "minigolf": "",
+   "tennis": "",
+   "skateboarding": "",
+   "table_tennis": "",
+   "volleyball": "",
+   "basketball": "",
+   "canoeing": "",
+   "climbing": "",
+   "gesprochene_Sprachen": "",
+   "Betriebszeiten": "",
+   "Check-In": "",
+   "Check-Out": "",
+   "UnterkunftsmöglichkeitenPKW": "",
+   "UnterkunftsmöglichkeitenWohnmobil": "",
+   "UnterkunftsmöglichkeitenWohnwagen": "",
+   "UnterkunftsmöglichkeitenLKW": "",
+   "UnterkunftsmöglichkeitenZelt": "",
+   "UnterkunftsmöglichkeitenMiet-Unterkunft": "",
+   "Anzahl_der_Stellplätze": ""
+}
+```
+
+Notes:
+- The name of the campsite is "campinghof-bartl".
+- The content indicates it is a campground, so "Kategorie-Campingplatz" is set to true.
+- No specific information about it being an RV park is found, so "Kategorie-Wohnmobilstellplatz" is left empty.
+- The phone number "0171-174 98 58" is found.
+- No email address is found.
+- Multiple image URLs are provided.
+- The description is created based on the content.
+- It is located near water ("lageWasser" is true) and not in the mountains or the city.
+- Sightseeing is available as indicated in the content.
+- Other fields are left empty or set to false based on the lack of specific information in the provided content.
