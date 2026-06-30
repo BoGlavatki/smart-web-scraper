@@ -9,18 +9,13 @@ import { getAllUrls } from './logic/getAllUrls.js';
 import { getNextUrl } from './logic/getNextUrl.js';
 import { cleanUrls } from './logic/cleanedUrls.js';
 
-//Verzeichnis mit urls lesen
 const startDomains = readUrlsFromFile('./startURLS/urls.txt');
-
-// const instructionsSystem = fs.readFileSync('./instructions/withSourceCode/instructionQuellCode.txt');
-const instructionsSystem = fs.readFileSync('./instructions/withSourceCode/instructionsPropmt.txt');
+const instructionsSystem = fs.readFileSync('./instructions/withSourceCode/instructionsPropmt.txt', 'utf8');
 const startTime = performance.now();
 for (const domain of startDomains) {
     
     console.log("Domain... wird gelesen ......" + domain)
-    // createFolderUrls(domain);
-    // let missingProperties = JSON.parse(fs.readFileSync('./jsonLeer.json'));
-    let missingProperties = JSON.parse(fs.readFileSync('./jsonRef.json'));
+    let missingProperties = JSON.parse(fs.readFileSync('./jsonRef.json', 'utf8'));
     let collectedProperties = {};
     let availableUrls = [];
     let visitedUrls = [];
@@ -34,7 +29,6 @@ for (const domain of startDomains) {
         const cleanHtml = await  getCleanSource(url);
         console.log(cleanHtml);
 
-        // on first run: create a list of all links on this page
         if(visitedUrls.length === 1) {
             const urlsFromQuellcode = getAllUrls(cleanHtml); 
             availableUrls = await cleanUrls(urlsFromQuellcode, domain);
@@ -44,31 +38,21 @@ for (const domain of startDomains) {
     
         const response = await analysing(cleanHtml, JSON.stringify(missingProperties), instructionsSystem);
         
+        const {propertiesReceivedFromThisUrl, missingPropertiesForUrl} = await getPropertiesFromLLMResponse(response);
 
-        const {propertiesReceivedFromThisUrl, missingPropertiesForUrl} = await getPropertiesFromLLMResponse(response); // todo (filter empty values) (return object) - erledigt 
-        // console.log("Received Properties cleaned:  " + JSON.stringify(missingPropertiesForUrl));
-
-
-        // merge properties collected in this run with properties filled in previous runs
         collectedProperties = Object.assign(collectedProperties, propertiesReceivedFromThisUrl);
 
         missingProperties = removeMatchingProperties(missingProperties, propertiesReceivedFromThisUrl);
         availableUrls = availableUrls.filter(url => !visitedUrls.includes(url));
 
-
-        // // get next url / break loop
         url = await getNextUrl(availableUrls, visitedUrls, missingPropertiesForUrl, domain);
 
-        // // for now, break after maximum of 3 visited urls per domain
         if(visitedUrls.length > 3) {
             break;
         }
     }
     
-
-
-    // store info in json file per domain
-    storePropertiesForDomain(domain, collectedProperties); //toDo - erledigt
+    storePropertiesForDomain(domain, collectedProperties);
     
    
 };
