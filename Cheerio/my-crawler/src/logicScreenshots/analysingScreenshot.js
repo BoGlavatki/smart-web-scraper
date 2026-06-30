@@ -1,13 +1,16 @@
 import { OpenAI } from 'openai'
 import fs from 'fs';
-import * as fs from 'fs';
 
-const apiKeyFromFile = fs.readFileSync('../../logic/apiKey.txt');
+const apiKeyFromEnv = process.env.OPENAI_API_KEY;
+if (!apiKeyFromEnv) {
+    throw new Error('OPENAI_API_KEY is missing');
+}
+
 export async function analysing(imageBase64, instructions, instructionsSystem) {
 
 async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
     const openai = new OpenAI({
-        apiKey: apiKeyFromFile
+        apiKey: apiKeyFromEnv
       });
         const response = await openai.chat.completions.create({
             model: 'gpt-4o',
@@ -38,7 +41,6 @@ async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
         console.log(`Anzahl der Tokens im Output: ${completionTokens}`);
         console.log(`Gesamtanzahl der Tokens: ${totalTokens}`);
   
-        // Tokenanzahl in Datei schreiben
         const logEntry = `Input Tokens: ${promptTokens}, Output Tokens: ${completionTokens}, Total Tokens: ${totalTokens}\n`;
         fs.appendFileSync("token_usage_log.txt", logEntry);
       } else {
@@ -47,12 +49,11 @@ async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
         return response.choices[0].message.content;
     }
 
-
   try {
       const response = await requestOpenAI(imageBase64, instructions, instructionsSystem);
-    //   console.log("Rsponse wird zurück gegeben...." + response);
       return response;
   } catch (error) {
       console.error('Error calling requestOpenAI:', error);
+      return null;
   }
 }
