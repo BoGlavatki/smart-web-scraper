@@ -1,10 +1,12 @@
 import { OpenAI } from 'openai'
 import fs from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { requireOpenAiApiKey } from '../../../config/env.js';
 
-const apiKeyFromEnv = process.env.OPENAI_API_KEY;
-if (!apiKeyFromEnv) {
-    throw new Error('OPENAI_API_KEY is missing');
-}
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const tokenLogPath = resolve(__dirname, '../../../data/token_usage_log.txt');
+const apiKeyFromEnv = requireOpenAiApiKey();
 
 export async function analysing(imageBase64, instructions, instructionsSystem) {
 
@@ -42,7 +44,7 @@ async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
         console.log(`Gesamtanzahl der Tokens: ${totalTokens}`);
   
         const logEntry = `Input Tokens: ${promptTokens}, Output Tokens: ${completionTokens}, Total Tokens: ${totalTokens}\n`;
-        fs.appendFileSync("token_usage_log.txt", logEntry);
+        fs.appendFileSync(tokenLogPath, logEntry);
       } else {
         console.warn("Keine Token-Informationen in der Antwort enthalten.");
       }
