@@ -9,13 +9,13 @@ import { getAllUrls } from '../../logic/getAllUrls.js';
 import { getNextUrl } from '../../logic/getNextUrl.js';
 import { cleanUrls } from '../../logic/cleanedUrls.js';
 
-const startDomains = readUrlsFromFile('../../config/startURLS/urls.txt');
+const startDomains = readUrlsFromFile('./config/startURLS/urls.txt');
 const startTime = performance.now();
 
 for (const domain of startDomains) {
   console.log('Domain... wird gelesen ......' + domain);
-  let missingProperties = JSON.parse(fs.readFileSync('../../config/jsonRefScreenshot.json', 'utf8'));
-  let instructionsSystem = fs.readFileSync('../../config/prompts/screenshot/instruct.txt', 'utf8');
+  let missingProperties = JSON.parse(fs.readFileSync('./config/jsonRefScreenshot.json', 'utf8'));
+  let instructionsSystem = fs.readFileSync('./config/prompts/screenshot/instruct.txt', 'utf8');
   let collectedProperties = {};
   let availableUrls = [];
   let visitedUrls = [];
@@ -53,7 +53,7 @@ for (const domain of startDomains) {
 
 const endTime = performance.now();
 console.log(`myMethod benötigte ${endTime - startTime} Millisekunden.`);
-fs.appendFileSync('../../data/token_usage_log.txt', `Dazu benötigte Zeit:  ${endTime - startTime}, Modell: gpt-4o`);
+fs.appendFileSync('./data/token_usage_log.txt', `Dazu benötigte Zeit:  ${endTime - startTime}, Modell: gpt-4o`);
 
 function removeMatchingProperties(a, b) {
   for (const key in b) {
