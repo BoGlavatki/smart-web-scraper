@@ -1,6 +1,6 @@
-# Smart Web Scraper
+# Scraper Core
 
-Der Smart Web Scraper extrahiert strukturierte Informationen von Webseiten mit LLM-Unterstützung. Das Projekt ist jetzt in eine klarere Struktur aufgeteilt:
+`scraper-core` ist der Hauptbereich des Smart Web Scrapers und extrahiert strukturierte Informationen von Webseiten mit LLM-Unterstützung. Das Projekt ist jetzt in eine klarere Struktur aufgeteilt:
 
 - `src/source-scraper/` für die Quellcode-Analyse
 - `src/screenshot-scraper/` für die Screenshot-Analyse
@@ -47,7 +47,7 @@ flowchart TD
 ## Installation
 
 1. Repository klonen.
-2. In den Ordner `Cheerio` wechseln.
+2. In den Ordner `scraper-core` wechseln.
 3. Abhängigkeiten installieren:
 
    ```bash
