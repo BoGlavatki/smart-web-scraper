@@ -10,7 +10,7 @@
     
       "lageWasser": "You read the source code of the website and, based on the content, you need to determine if this campsite is located near water or not.Respond with true if it is located near water and false if it is not. Water could be a lake, river, or other types. Leave this field empty if you find no information about water.",
       "lageInDerBergen": "You read the source code of the website and, based on the content, you need to determine if this campsite is located in the mountains or not. Respond with true if it is located in the mountains and false if it is not.",
-      "lageInDerStadt": "You read the source code of the website and, based on the content, you need to determine if this campsite is located in the city, near the city or not. Respond with true if it is located in the city or near and false if it is not.",
+      "lageInDerStadt": "You read the source code of the website and, based on the content, you need to determine if this campsite is located in the city or not. Respond with true if it is located in the city and false if it is not.",
     
     
       "ausstattungFishing": "You read the source code of the website and, based on the content, you need to determine if fishing is available at this campsite. From the content, you must understand whether it.  Respond with true if fishing is available and false if it is not.",
@@ -48,5 +48,3 @@
       "UnterkunftsmöglichkeitenMiet-Unterkunft": "You read the source code of the website and, based on the content, you need to determine the accommodation options for rental accommodations at this campsite. Respond with true if accommodation options for rental accommodations are available and false if they are not. ",
     "Anzahl_der_Stellplätze": "You read the source code of the website and, based on the content, you need to determine the number of pitches at this campsite. Write the number of pitches here. If you do not find any information, leave this field empty."
   }
-
-  

@@ -1,0 +1,4 @@
+.env
+.env.*
+**/apiKey.txt
+**/node_modules/

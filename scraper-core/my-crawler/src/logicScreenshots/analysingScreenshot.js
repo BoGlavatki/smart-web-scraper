@@ -1,13 +1,18 @@
 import { OpenAI } from 'openai'
 import fs from 'fs';
-import * as fs from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { requireOpenAiApiKey } from '../../../config/env.js';
 
-const apiKeyFromFile = fs.readFileSync('../../logic/apiKey.txt');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const tokenLogPath = resolve(__dirname, '../../../data/token_usage_log.txt');
+const apiKeyFromEnv = requireOpenAiApiKey();
+
 export async function analysing(imageBase64, instructions, instructionsSystem) {
 
 async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
     const openai = new OpenAI({
-        apiKey: apiKeyFromFile
+        apiKey: apiKeyFromEnv
       });
         const response = await openai.chat.completions.create({
             model: 'gpt-4o',
@@ -38,21 +43,19 @@ async function requestOpenAI(imageBase64, instructions, instructionsSystem) {
         console.log(`Anzahl der Tokens im Output: ${completionTokens}`);
         console.log(`Gesamtanzahl der Tokens: ${totalTokens}`);
   
-        // Tokenanzahl in Datei schreiben
         const logEntry = `Input Tokens: ${promptTokens}, Output Tokens: ${completionTokens}, Total Tokens: ${totalTokens}\n`;
-        fs.appendFileSync("token_usage_log.txt", logEntry);
+        fs.appendFileSync(tokenLogPath, logEntry);
       } else {
         console.warn("Keine Token-Informationen in der Antwort enthalten.");
       }
         return response.choices[0].message.content;
     }
 
-
   try {
       const response = await requestOpenAI(imageBase64, instructions, instructionsSystem);
-    //   console.log("Rsponse wird zurück gegeben...." + response);
       return response;
   } catch (error) {
       console.error('Error calling requestOpenAI:', error);
+      return null;
   }
 }

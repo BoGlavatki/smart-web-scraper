@@ -1,10 +1,12 @@
 {
-  "name": "cheerio",
+  "name": "scraper-core",
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "src/source-scraper/index.js",
   "scripts": {
+    "start:source": "node src/source-scraper/index.js",
+    "start:screenshot": "node src/screenshot-scraper/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
