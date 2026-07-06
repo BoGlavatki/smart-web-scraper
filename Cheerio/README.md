@@ -7,6 +7,37 @@ Der Smart Web Scraper extrahiert strukturierte Informationen von Webseiten mit L
 - `config/` für JSON, Prompts und Env-Konfiguration
 - `data/` nur für Ergebnisse und Logs
 
+## Komplettablauf
+
+```mermaid
+flowchart TD
+    A[Start] --> B[URLs aus config/startURLS/urls.txt]
+    B --> C{Welcher Pfad?}
+    C --> D[Quellcode-Analyse]
+    C --> E[Screenshot-Analyse]
+
+    I[config/.env mit OPENAI_API_KEY] --> D2
+    I --> E2
+
+    D --> D1[getCleanSource(url)]
+    D1 --> D2[LLM analysiert Quellcode]
+    D2 --> D3[Antwort bereinigen und Properties mergen]
+    D3 --> F{Noch offene Felder oder nächste URL?}
+    F -- Ja --> D1
+    F -- Nein --> G[Ergebnisse in data/<domain>/ speichern]
+
+    E --> E1[startCrawler(url) erstellt Screenshot]
+    E1 --> E2[analysingScreenshot(imageBase64, ...)]
+    E2 --> E3[Antwort bereinigen und Properties mergen]
+    E3 --> H{Noch offene Felder oder nächste URL?}
+    H -- Ja --> E1
+    H -- Nein --> G
+
+    D3 --> J[Gemeinsame Helfer: getAllUrls, getNextUrl, cleanPropertiesFromLLM]
+    E3 --> J
+    G --> K[data/token_usage_log.txt]
+```
+
 ## Voraussetzungen
 
 - Node.js 18 oder neuer
